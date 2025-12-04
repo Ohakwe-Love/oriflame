@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skincare from the Sea - Luxury Hero</title>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E60028;
+            --secondary: #4c9483;
+            --white: #FFFFFF;
+            --black: #000000;
+            --text-color: #333333;
+            --muted-color: #777777;
+            --border-color: #e5e5e5;
+            --light-bg: #e1f4eb;
+            --light-grey: #f5f5f5;
+            --shadow: 0px 2px 2px 0px rgba(0, 0, 66, 0.08), 0px 1px 5px 0px rgba(0, 0, 66, 0.08);
+            --font-family: 'Afacad', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            overflow-x: hidden;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 50%, var(--light-grey) 100%);
+            overflow: hidden;
+        }
+
+        /* Parallax layers */
+        .parallax-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.1s ease-out;
+        }
+
+        .layer-1 {
+            z-index: 1;
+        }
+
+        .layer-2 {
+            z-index: 2;
+        }
+
+        .layer-3 {
+            z-index: 3;
+        }
+
+        /* Decorative elements */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.15;
+        }
+
+        .circle-1 {
+            width: 600px;
+            height: 600px;
+            background: var(--secondary);
+            top: -200px;
+            right: -100px;
+        }
+
+        .circle-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary);
+            bottom: -150px;
+            left: -100px;
+        }
+
+        .circle-3 {
+            width: 300px;
+            height: 300px;
+            border: 2px solid var(--secondary);
+            background: transparent;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+        }
+
+        /* Wave pattern */
+        .wave-pattern {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        /* Content container */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            width: 100%;
+            padding: 0 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        /* Left content */
+        .hero-text {
+            color: var(--text-color);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--white);
+            color: var(--secondary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+
+        .hero-title .highlight {
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-title .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background: var(--light-bg);
+            z-index: -1;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            line-height: 1.6;
+            color: var(--muted-color);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background: var(--text-color);
+            color: var(--white);
+            padding: 18px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            background: var(--black);
+            transform: translateY(-2px);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-color);
+            padding: 18px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid var(--text-color);
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--text-color);
+            color: var(--white);
+        }
+
+        /* Right content - Interactive product display */
+        .hero-visual {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1000px;
+        }
+
+        .product-showcase {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-card-hero {
+            position: absolute;
+            width: 280px;
+            height: 400px;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-card-hero:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        .product-card-hero.card-1 {
+            transform: translateX(-120px) rotate(-5deg);
+        }
+
+        .product-card-hero.card-2 {
+            z-index: 5;
+            transform: scale(1.1);
+        }
+
+        .product-card-hero.card-3 {
+            transform: translateX(120px) rotate(5deg);
+        }
+
+        .product-icon {
+            width: 120px;
+            height: 180px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .product-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-color);
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .product-price {
+            font-size: 14px;
+            color: var(--muted-color);
+        }
+
+        /* Trust indicators */
+        .trust-bar {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 60px;
+            background: var(--white);
+            padding: 25px 50px;
+            border-radius: 50px;
+            box-shadow: var(--shadow);
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .trust-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--light-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .trust-text {
+            font-size: 14px;
+            color: var(--text-color);
+        }
+
+        .trust-number {
+            font-weight: 700;
+            font-size: 18px;
+            display: block;
+        }
+
+        /* Floating elements */
+        .float-element {
+            position: absolute;
+            background: var(--white);
+            border-radius: 10px;
+            padding: 15px 20px;
+            box-shadow: var(--shadow);
+            font-size: 14px;
+            color: var(--text-color);
+            font-weight: 600;
+            opacity: 0.9;
+            transition: transform 0.3s ease;
+        }
+
+        .float-element:hover {
+            transform: scale(1.05);
+        }
+
+        .float-1 {
+            top: 15%;
+            left: 5%;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .float-2 {
+            top: 30%;
+            right: 8%;
+            background: var(--light-bg);
+        }
+
+        .float-3 {
+            bottom: 25%;
+            left: 8%;
+        }
+
+        .star-rating {
+            color: var(--secondary);
+        }
+
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 56px;
+            }
+
+            .hero-subtitle {
+                max-width: 100%;
+            }
+
+            .hero-cta {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .hero-visual {
+                height: 400px;
+            }
+
+            .product-card-hero {
+                width: 200px;
+                height: 300px;
+                padding: 20px;
+            }
+
+            .product-card-hero.card-1 {
+                transform: translateX(-80px) rotate(-5deg) scale(0.9);
+            }
+
+            .product-card-hero.card-3 {
+                transform: translateX(80px) rotate(5deg) scale(0.9);
+            }
+
+            .trust-bar {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .float-element {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                padding: 0 30px;
+            }
+
+            .hero-title {
+                font-size: 42px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .circle-1, .circle-2, .circle-3 {
+                display: none;
+            }
+
+            .product-card-hero.card-1,
+            .product-card-hero.card-3 {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero" id="hero">
+        <!-- Parallax layers -->
+        <div class="parallax-layer layer-1">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+        </div>
+        
+        <div class="parallax-layer layer-2">
+            <div class="circle circle-3"></div>
+            <svg class="wave-pattern" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="currentColor" fill-opacity="0.3" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+
+        <!-- Floating elements -->
+        <div class="float-element float-1">
+            <span class="star-rating">★★★★★</span>
+            <span>Rated 4.9/5</span>
+        </div>
+        <div class="float-element float-2">
+            🌊 Ocean-Powered
+        </div>
+        <div class="float-element float-3">
+            ✓ Certified Clean
+        </div>
+
+        <div class="parallax-layer layer-3">
+            <div class="hero-content">
+                <!-- Left content -->
+                <div class="hero-text">
+                    <span class="hero-badge">New Collection</span>
+                    <h1 class="hero-title">
+                        Skincare from the <span class="highlight">Sea</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Discover the transformative power of marine botanicals. Luxurious, clean skincare that delivers visible results.
+                    </p>
+                    <div class="hero-cta">
+                        <button class="btn-primary">Shop Now</button>
+                        <button class="btn-secondary">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Right content - Interactive products -->
+                <div class="hero-visual">
+                    <div class="product-showcase">
+                        <div class="product-card-hero card-1">
+                            <div class="product-icon" style="background: linear-gradient(135deg, #f4d03f 0%, #d4a017 100%);">
+                                Body Oil
+                            </div>
+                            <div class="product-name">Undaria Algae<br>Body Oil</div>
+                            <div class="product-price">From $16</div>
+                        </div>
+
+                        <div class="product-card-hero card-2">
+                            <div class="product-icon" style="background: linear-gradient(135deg, #d4e8df 0%, #4c9483 100%);">
+                                Serum
+                            </div>
+                            <div class="product-name">Hyaluronic<br>Body Serum</div>
+                            <div class="product-price">From $22</div>
+                        </div>
+
+                        <div class="product-card-hero card-3">
+                            <div class="product-icon" style="background: linear-gradient(135deg, #e8f4f0 0%, #a8c9ba 100%);">
+                                Cream
+                            </div>
+                            <div class="product-name">Atmosphere<br>Protection</div>
+                            <div class="product-price">From $38</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust bar -->
+        <div class="trust-bar">
+            <div class="trust-item">
+                <div class="trust-icon">✓</div>
+                <div class="trust-text">
+                    <span class="trust-number">100%</span>
+                    Clean Ingredients
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🌊</div>
+                <div class="trust-text">
+                    <span class="trust-number">50+</span>
+                    Marine Botanicals
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">★</div>
+                <div class="trust-text">
+                    <span class="trust-number">15K+</span>
+                    5-Star Reviews
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Parallax effect on mouse move
+        const hero = document.getElementById('hero');
+        const layers = document.querySelectorAll('.parallax-layer');
+
+        hero.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+
+            layers.forEach((layer, index) => {
+                const speed = (index + 1) * 10;
+                const x = (mouseX - 0.5) * speed;
+                const y = (mouseY - 0.5) * speed;
+                layer.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+
+        // Product cards interactive tilt
+        const productCards = document.querySelectorAll('.product-card-hero');
+
+        productCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.zIndex = '100';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                if (!this.classList.contains('card-2')) {
+                    this.style.zIndex = '';
+                }
+            });
+
+            card.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+
+                let baseTransform = '';
+                if (this.classList.contains('card-1')) {
+                    baseTransform = 'translateX(-120px)';
+                } else if (this.classList.contains('card-3')) {
+                    baseTransform = 'translateX(120px)';
+                } else {
+                    baseTransform = 'scale(1.1)';
+                }
+
+                this.style.transform = `${baseTransform} translateY(-15px) scale(1.05) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            card.addEventListener('mouseleave', function() {
+                if (this.classList.contains('card-1')) {
+                    this.style.transform = 'translateX(-120px) rotate(-5deg)';
+                } else if (this.classList.contains('card-3')) {
+                    this.style.transform = 'translateX(120px) rotate(5deg)';
+                } else {
+                    this.style.transform = 'scale(1.1)';
+                }
+            });
+        });
+
+        // Floating elements subtle interaction
+        const floatElements = document.querySelectorAll('.float-element');
+        
+        floatElements.forEach(element => {
+            let interval = Math.random() * 3000 + 2000;
+            setInterval(() => {
+                element.style.transform = `translateY(-5px) scale(1.05)`;
+                setTimeout(() => {
+                    element.style.transform = '';
+                }, 300);
+            }, interval);
+        });
+    </script>
+</body>
+</html>

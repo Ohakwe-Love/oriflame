@@ -119,6 +119,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    transition: 0.3s ease-in-out;
 }
 
 :root {
@@ -159,3 +160,57 @@ svg {
     height: 20px;
 }
 
+a {
+    text-decoration: none;
+    color: var(--black);
+    text-transform: capitalize;
+}
+
+li {
+    list-style: none;
+}
+
+::selection {
+    background: transparent;
+    color: var(--primary);
+}
+
+.btn {
+    padding: 18px 42px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: var(--font-family);
+}
+
+.btn-primary {
+    background: var(--text-color);
+    color: var(--white);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover {
+    background: var(--black);
+    /* transform: translateY(-3px); */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+}
+
+.btn-secondary:hover {
+    background: var(--text-color);
+    color: var(--white);
+}
+
+.btn-secondary:active {
+    transform: scale(0.98);
+}

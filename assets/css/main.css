@@ -125,6 +125,7 @@
 :root {
     --primary: #E60028;
     --secondary: #4c9483;
+    --faint-secondary: #61bda8cb;
     --light-bg: #e1f4eb;
     --white: #FFFFFF;
     --black: #000000;
@@ -146,7 +147,7 @@ body {
 }
 
 h1,
-h2, 
+h2,
 h3,
 h4 {
     font-family: var(--heading-font);
@@ -238,11 +239,20 @@ li {
     font-weight: 700;
 }
 
+@media (max-width: 768px) {
+    .section-header h2 {
+        font-size: 30px;
+        font-weight: 200;
+        padding: 0;
+    }
+}
+
 .slider-dots {
     display: flex;
     justify-content: center;
     gap: 12px;
     margin-top: 50px;
+    border: none;
 }
 
 .dot {

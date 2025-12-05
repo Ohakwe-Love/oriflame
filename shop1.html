@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Fragrance Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E60028;
+            --secondary: #4c9483;
+            --light-bg: #e1f4eb;
+            --white: #FFFFFF;
+            --black: #000000;
+            --text-color: #333333;
+            --muted-color: #777777;
+            --border-color: #e5e5e5;
+            --light-grey: #f5f5f5;
+            --shadow: 0px 2px 2px 0px rgba(0, 0, 66, 0.08), 0px 1px 5px 0px rgba(0, 0, 66, 0.08);
+            --font-family: 'Afacad', sans-serif;
+            --heading-font: 'Afacad', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--text-color);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Header */
+        .shop-header {
+            padding: 80px 0 50px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
+        }
+
+        .shop-title {
+            font-size: 56px;
+            font-family: var(--heading-font);
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .shop-subtitle {
+            font-size: 18px;
+            color: var(--muted-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 45px 14px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: var(--font-family);
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(230, 0, 40, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted-color);
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .filter-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        select {
+            padding: 12px 40px 12px 18px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: var(--font-family);
+            background: var(--white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23777' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(230, 0, 40, 0.1);
+        }
+
+        /* Results Info */
+        .results-info {
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .results-count {
+            font-size: 15px;
+            color: var(--muted-color);
+        }
+
+        .results-count strong {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 8px;
+        }
+
+        .view-btn {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            background: var(--white);
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .view-btn:hover {
+            border-color: var(--primary);
+        }
+
+        .view-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 30px 0 80px;
+        }
+
+        .product-card {
+            min-width: calc(33.333% - 20px);
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+
+        .product-img {
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 20px;
+            background: var(--light-grey);
+            border-radius: 8px;
+        }
+
+        .product-badge {
+            padding: 8px 15px;
+            border-radius: 8px;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            z-index: 1;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .product-badge.new {
+            color: var(--white);
+            background: var(--secondary);
+        }
+
+        .product-badge.sale {
+            color: var(--white);
+            background: var(--primary);
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .product-category {
+            font-size: 12px;
+            color: var(--primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .product-price {
+            font-size: 32px;
+            color: var(--black);
+            font-family: var(--heading-font);
+            line-height: 1;
+            padding: 0;
+            margin-top: -10px;
+        }
+
+        .product-price span {
+            font-size: 20px;
+            color: var(--muted-color);
+        }
+
+        .product-title {
+            font-size: 20px;
+            color: var(--black);
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .rating {
+            display: inline-flex;
+            gap: 10px;
+            font-size: 14px;
+            align-items: center;
+            color: var(--muted-color);
+        }
+
+        .rating svg {
+            width: 15px;
+            height: 15px;
+            color: #FFA500;
+        }
+
+        .product-description {
+            color: var(--muted-color);
+            font-size: 15px;
+            line-height: 1.4;
+            margin-bottom: 25px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .order-btn {
+            padding: 10px 35px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: var(--font-family);
+        }
+
+        .order-btn:hover {
+            background: #c50023;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(230, 0, 40, 0.3);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--muted-color);
+        }
+
+        .no-results h3 {
+            font-size: 24px;
+            color: var(--black);
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .product-card {
+                min-width: calc(50% - 15px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .shop-title {
+                font-size: 40px;
+            }
+
+            .filter-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-box {
+                min-width: 100%;
+            }
+
+            .filter-group {
+                width: 100%;
+            }
+
+            select {
+                width: 100%;
+            }
+
+            .product-card {
+                min-width: 100%;
+            }
+
+            .results-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="shop-header">
+        <div class="container">
+            <h1 class="shop-title">Our Collection</h1>
+            <p class="shop-subtitle">Discover our exquisite range of premium fragrances crafted for the modern connoisseur</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="filter-bar">
+            <div class="filter-controls">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <span class="search-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">Category</span>
+                    <select id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="body">Body</option>
+                        <option value="face">Face</option>
+                        <option value="hair">Hair</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">Sort By</span>
+                    <select id="sortFilter">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name">Name: A to Z</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-info">
+            <div class="results-count">
+                Showing <strong id="resultCount">0</strong> products
+            </div>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be inserted here -->
+        </div>
+    </div>
+
+    <script>
+        const products = [
+            {
+                id: 1,
+                name: "Mister Giordani - Aqua",
+                category: "Body",
+                price: 42,
+                rating: 5,
+                reviews: 101,
+                badge: "new",
+                description: "A refreshing aquatic fragrance with notes of bergamot and sea minerals, perfect for everyday wear.",
+                image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=500&h=500&fit=crop"
+            },
+            {
+                id: 2,
+                name: "Essence Pure - Rose",
+                category: "Face",
+                price: 38,
+                rating: 4,
+                reviews: 89,
+                badge: null,
+                description: "Delicate rose essence combined with subtle vanilla undertones for an elegant, timeless scent.",
+                image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=500&h=500&fit=crop"
+            },
+            {
+                id: 3,
+                name: "Nordic Woods",
+                category: "Body",
+                price: 55,
+                rating: 5,
+                reviews: 143,
+                badge: "sale",
+                description: "Bold and masculine, featuring cedarwood, pine, and amber for a sophisticated forest aroma.",
+                image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=500&h=500&fit=crop"
+            },
+            {
+                id: 4,
+                name: "Citrus Bloom",
+                category: "Hair",
+                price: 35,
+                rating: 4,
+                reviews: 67,
+                badge: null,
+                description: "Bright and uplifting citrus notes with hints of jasmine and white tea for a fresh experience.",
+                image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59d75?w=500&h=500&fit=crop"
+            },
+            {
+                id: 5,
+                name: "Velvet Noir",
+                category: "Body",
+                price: 68,
+                rating: 5,
+                reviews: 201,
+                badge: "new",
+                description: "Rich and mysterious blend of black orchid, leather, and patchouli for evening elegance.",
+                image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=500&h=500&fit=crop"
+            },
+            {
+                id: 6,
+                name: "Summer Breeze",
+                category: "Face",
+                price: 45,
+                rating: 4,
+                reviews: 112,
+                badge: null,
+                description: "Light and airy with coconut, peach, and musk notes that evoke warm summer days.",
+                image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?w=500&h=500&fit=crop"
+            },
+            {
+                id: 7,
+                name: "Amber Mystique",
+                category: "Hair",
+                price: 52,
+                rating: 5,
+                reviews: 156,
+                badge: null,
+                description: "Warm amber and sandalwood create a captivating, long-lasting aromatic experience.",
+                image: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=500&h=500&fit=crop"
+            },
+            {
+                id: 8,
+                name: "Garden of Eden",
+                category: "Body",
+                price: 48,
+                rating: 4,
+                reviews: 94,
+                badge: "new",
+                description: "Floral paradise with magnolia, gardenia, and green tea for a natural, refreshing scent.",
+                image: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=500&h=500&fit=crop"
+            },
+            {
+                id: 9,
+                name: "Midnight Eclipse",
+                category: "Face",
+                price: 72,
+                rating: 5,
+                reviews: 178,
+                badge: "sale",
+                description: "Intense and dramatic with oud, tobacco, and dark chocolate for a bold statement.",
+                image: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=500&h=500&fit=crop"
+            }
+        ];
+
+        let filteredProducts = [...products];
+
+        function renderProducts(productsToRender) {
+            const grid = document.getElementById('productsGrid');
+            const resultCount = document.getElementById('resultCount');
+            
+            resultCount.textContent = productsToRender.length;
+
+            if (productsToRender.length === 0) {
+                grid.innerHTML = `
+                    <div class="no-results">
+                        <h3>No products found</h3>
+                        <p>Try adjusting your filters or search terms</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = productsToRender.map(product => `
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="${product.image}" alt="${product.name}">
+                        ${product.badge ? `<div class="product-badge ${product.badge}">${product.badge}</div>` : ''}
+                    </div>
+                    <div class="product-details">
+                        <div class="product-header">
+                            <div class="product-category">${product.category}</div>
+                            <div class="product-price"><span>$</span>${product.price}</div>
+                        </div>
+                        <h3 class="product-title">
+                            ${product.name}
+                            <span class="rating">
+                                ${Array(product.rating).fill(0).map(() => `
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z"></path>
+                                        </svg>
+                                    </span>
+                                `).join('')}
+                                <span>(${product.reviews})</span>
+                            </span>
+                        </h3>
+                        <p class="product-description">${product.description}</p>
+                        <div class="product-footer">
+                            <button class="order-btn">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterAndSort() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            const sortFilter = document.getElementById('sortFilter').value;
+
+            filteredProducts = products.filter(product => {
+                const matchesSearch = product.name.toLowerCase().includes(searchTerm) || 
+                                    product.description.toLowerCase().includes(searchTerm);
+                const matchesCategory = categoryFilter === 'all' || 
+                                      product.category.toLowerCase() === categoryFilter;
+                return matchesSearch && matchesCategory;
+            });
+
+            switch(sortFilter) {
+                case 'price-low':
+                    filteredProducts.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high':
+                    filteredProducts.sort((a, b) => b.price - a.price);
+                    break;
+                case 'name':
+                    filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+                default:
+                    break;
+            }
+
+            renderProducts(filteredProducts);
+        }
+
+        document.getElementById('searchInput').addEventListener('input', filterAndSort);
+        document.getElementById('categoryFilter').addEventListener('change', filterAndSort);
+        document.getElementById('sortFilter').addEventListener('change', filterAndSort);
+
+        // Initial render
+        renderProducts(products);
+    </script>
+</body>
+</html>         

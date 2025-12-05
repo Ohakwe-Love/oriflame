@@ -184,6 +184,8 @@ function toggleCart() {
     const cartMenu = document.querySelector('.cart-menu');
     overlay.classList.toggle('active');
     cartMenu.classList.toggle('active');
+
+    if(cartMenu.classList.contains('active')) document.body.style.overflow = 'hidden';
 }
 
 overlay.addEventListener('click', function () {
@@ -191,6 +193,7 @@ overlay.addEventListener('click', function () {
     if (cartMenu.classList.contains('active')) {
         cartMenu.classList.remove('active');
         overlay.classList.remove('active');
+        document.body.style.overflow = '';
     }
 });
 

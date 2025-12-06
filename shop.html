@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- title -->
+    <title>Document</title>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <!-- <link rel="manifest" href="assets/images/favicon/site.webmanifest"> -->
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/shop.css">
+</head>
+
+<body>
+
+    <!-- top bar -->
+    <aside class="top-bar">
+        <div class="container">
+            <div class="sale-banner">
+                <p class="sale-banner-text">Free shipping on orders above $150</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-actions">
+                <button class="toggle-nav action-btn" id="mobileNavBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z"></path>
+                    </svg>
+                </button>
+
+                <!-- search btn -->
+                <button class="search-btn action-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <a href="index.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 139 31" data-testid="Presentation-top-area-common"
+                    class="frontpage-1vw230l">
+                    <path
+                        d="M57.98 28.94l-1.595-4.904h-.98L53.81 28.94l-1.593-4.91h-1.23l2.206 6.62h.98l1.716-4.66 1.59 4.66h.98l2.2-6.62h-1.22zM1.334 26.857h33.35v.98H1.334v-.98zm41.318-24.89h2.207v14.59h-2.21V1.967zm10.544 14.59h2.207v-6.13h7.602V8.343h-7.61V3.93h8.46V1.966h-10.66zM8.324 16.8c4.66 0 8.46-3.8 8.46-8.46 0-4.534-3.8-6.62-6.62-6.62-5.518 0-5.886 5.396-5.886 5.396h.13s.98-3.923 4.78-3.923c3.07 0 5.4 2.084 5.4 5.027 0 3.43-2.82 6.25-6.25 6.25-3.31 0-6.372-2.45-6.372-6.87 0-3.44 1.84-6.26 5.027-7.48V0C2.947.61.003 4.17.003 8.33c-.122 4.66 3.68 8.46 8.338 8.46zm36.78 10.056c-1.225-.245-1.593-.49-1.593-.98s.37-.737 1.11-.737c.62 0 1.23.24 1.72.61l.617-.85c-.613-.49-1.47-.86-2.33-.86-1.35 0-2.207.74-2.207 1.96s.73 1.6 2.2 1.96c1.22.25 1.47.49 1.47.98s-.49.86-1.1.86c-.86 0-1.47-.37-2.09-.86l-.74.86c.735.74 1.716 1.11 2.696 1.11 1.35 0 2.33-.73 2.33-1.96 0-1.35-.738-1.84-2.086-2.08zm-9.317-10.3l-4.414-5.884c2.207-.61 3.678-2.2 3.678-4.29 0-2.69-2.2-4.53-5.39-4.53h-6.38v14.59h2.2v-5.4h3.55l4.05 5.4 2.7.126zm-10.3-7.48V3.93h4.047c2.084 0 3.31.86 3.31 2.453s-1.35 2.575-3.31 2.575h-4.047zm40.706 18.76h3.31v-1.102h-3.31V25.14h3.678v-1.103h-4.78v6.498h4.78v-.98H66.2zM91.817 1.844l-6.62 14.713h2.33l1.715-3.8h7.11l1.595 3.8h2.452L93.78 1.844h-1.964zm-1.838 8.95l2.69-6.252 2.69 6.26h-5.4zm18.14-5.026l4.66 6.866.24.368.24-.36 4.536-6.86v10.79h2.207v-14.6h-2.084l-4.904 7.356-4.906-7.356h-2.08v14.59h2.085zm0 21.088h30.89v.98h-30.89v-.98zm22.19-12.383v-4.29h7.6V8.098h-7.6v-4.17h8.58v-1.96h-10.78v14.59h10.79V14.47zM98.93 28.57l-3.557-4.534H94.27v6.498h1.226v-4.536l3.55 4.536h.98v-6.498h-1.1zM72.936 1.968h-2.084v14.59h10.054v-2.084h-7.97zm13.12 25.87h3.31v-1.103h-3.31V25.14h3.677v-1.103H84.95v6.498h4.905v-.98h-3.81zm-9.197-3.8H74.4v6.497h2.453c2.083 0 3.432-1.47 3.432-3.31.122-1.717-1.35-3.188-3.434-3.188zm0 5.516h-1.35V25.14h1.35c1.35 0 2.2.98 2.2 2.206.12 1.226-.86 2.207-2.21 2.207z">
+                    </path>
+                </svg>
+            </a>
+
+            <div class="header-actions">
+                <a href="login.html" class="action-btn login-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z">
+                        </path>
+                    </svg>
+                </a>
+
+                <button class="action-btn cart-btn" id="openCartMenu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12.0049 2C15.3186 2 18.0049 4.68629 18.0049 8V9H22.0049V11H20.8379L20.0813 20.083C20.0381 20.6013 19.6048 21 19.0847 21H4.92502C4.40493 21 3.97166 20.6013 3.92847 20.083L3.17088 11H2.00488V9H6.00488V8C6.00488 4.68629 8.69117 2 12.0049 2ZM18.8309 11H5.17788L5.84488 19H18.1639L18.8309 11ZM13.0049 13V17H11.0049V13H13.0049ZM9.00488 13V17H7.00488V13H9.00488ZM17.0049 13V17H15.0049V13H17.0049ZM12.0049 4C9.86269 4 8.1138 5.68397 8.00978 7.80036L8.00488 8V9H16.0049V8C16.0049 5.8578 14.3209 4.10892 12.2045 4.0049L12.0049 4Z">
+                        </path>
+                    </svg>
+
+                    <span class="cart-badge">
+                        0
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- mobile nav -->
+        <nav class="mobileNav" id="mobileNav">
+            <ul>
+                <li><a href="shop.html">shop all</a></li>
+                <li><a href="shop.html">bestseller</a></li>
+                <li><a href="shop.html">face</a></li>
+                <li><a href="shop.html">body</a></li>
+                <li><a href="shop.html">set</a></li>
+                <li><a href="shop.html">build your routine</a></li>
+                <li><a href="shop.html">subscribe & save 10%</a></li>
+                <li><a href="shop.html">Help center</a></li>
+                <li><a href="shop.html">rewards</a></li>
+                <li><a href="shop.html">skincare studio</a></li>
+                <li><a href="shop.html">store locator</a></li>
+                <li><a href="contact.html">contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- mobile nav overlay -->
+        <div class="mobileNavOverlay" id="mobileNavOverlay"></div>
+    </header>
+
+    <!-- nav -->
+    <nav class="nav">
+        <ul>
+            <li><a href="shop.html">shop all</a></li>
+            <li><a href="shop.html">bestseller</a></li>
+            <li><a href="shop.html">face</a></li>
+            <li><a href="shop.html">body</a></li>
+            <li><a href="shop.html">set</a></li>
+            <li><a href="shop.html">build your routine</a></li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- search modal -->
+    <div class="searchModal  modalAnimation" id="searchModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeSearchModal" title="Close">&times;</button>
+            <form id="searchForm" autocomplete="off">
+                <input type="text" id="searchInput" name="searchInput" placeholder="Search Item" autofocus required>
+                <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0">
+                        </path>
+                    </svg></button>
+            </form>
+
+            <div class="search-catergories">
+                <a href="shop.html">Graphic tees </a>
+                <a href="shop.html">Plain Faces</a>
+                <a href="shop.html">Vintage Faces</a>
+                <a href="shop.html">Band tees</a>
+                <a href="shop.html">Custom Faces</a>
+                <a href="shop.html">Oversized Faces</a>
+                <a href="shop.html">Crew neck Faces</a>
+            </div>
+
+            <div class="search-history">
+                <h3>History
+                    <button id="clearSearchHistory">Clear All</button>
+                </h3>
+
+                <a href="" class="searchedItem">High Visibility T Shirt Short Sleeve Reflective <svg
+                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-up-right"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                    </svg></a>
+                <a href="" class="searchedItem">Short sleeve round neck Face <svg xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                    </svg></a>
+                <a href="" class="searchedItem">Fashionable oversized hoodie for women <svg
+                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-up-right"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                    </svg></a>
+                <a href="" class="searchedItem">Queen fashion long sleeve shirt, basic Face <svg
+                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-up-right"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                    </svg></a>
+                <a href="" class="searchedItem">Lee Women's Wrinkle Free Relaxed Fit Straight Leg Pant <svg
+                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-up-right"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                    </svg></a>
+                <a href="" class="searchedItem">Women's Summer Oversized Face Casual Office Fashion
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-up-right"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                    </svg>
+                </a>
+
+                <!--  -->
+                <div class="noSearchFound">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-emoji-frown" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path
+                                d="M4.285 12.433a.5.5 0 0 0 .683-.183A3.5 3.5 0 0 1 8 10.5c1.295 0 2.426.703 3.032 1.75a.5.5 0 0 0 .866-.5A4.5 4.5 0 0 0 8 9.5a4.5 4.5 0 0 0-3.898 2.25.5.5 0 0 0 .183.683M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5m4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5" />
+                        </svg>
+                        <p>Ooops! No search found</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- cart menu -->
+    <div class="cart-menu">
+        <!-- Cart Section -->
+        <section class="cart-menu-section">
+            <!-- Cart Header -->
+            <div class="cart-menu-header">
+                <h2 class="cart-menu-title">Shopping cart</h2>
+                <button class="cart-menu-close" aria-label="Close cart">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Cart Items -->
+            <div class="cart-menu-items">
+                <div class="cart-menu-item" data-price="20.00">
+                    <img src="assets/images/products/1.webp" alt="" loading="lazy" class="cart-menu-item-image">
+                    <div class="cart-menu-item-details">
+                        <div class="cart-menu-item-category">Face</div>
+                        <h4 class="cart-menu-item-name">Queen fashion long sleeve shirt, basic Face</h4>
+                        <div class="cart-menu-item-meta">
+                            <span>Price: <span>$20.00</span></span>
+                        </div>
+                        <div class="cart-menu-item-footer">
+                            <div class="cart-menu-item-quantity">
+                                <button class="qty-btn qty-decrease" aria-label="Decrease quantity">−</button>
+                                <span class="qty-value">1</span>
+                                <button class="qty-btn qty-increase" aria-label="Increase quantity">+</button>
+                            </div>
+                            <span class="cart-menu-item-price">$20.00</span>
+                        </div>
+                    </div>
+                    <button class="cart-menu-item-remove" aria-label="Remove item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M4 8H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="cart-menu-item" data-price="24.99">
+                    <img src="assets/images/products/2.webp" alt="" class="cart-menu-item-image">
+                    <div class="cart-menu-item-details">
+                        <div class="cart-menu-item-category">Face</div>
+                        <h4 class="cart-menu-item-name">Face Oil</h4>
+                        <div class="cart-menu-item-meta">
+                            <span>Price: <span>$24.00</span></span>
+                        </div>
+                        <div class="cart-menu-item-footer">
+                            <div class="cart-menu-item-quantity">
+                                <button class="qty-btn qty-decrease" aria-label="Decrease quantity">−</button>
+                                <span class="qty-value">1</span>
+                                <button class="qty-btn qty-increase" aria-label="Increase quantity">+</button>
+                            </div>
+                            <span class="cart-menu-item-price">$24.99</span>
+                        </div>
+                    </div>
+                    <button class="cart-menu-item-remove" aria-label="Remove item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M4 8H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="cart-menu-item" data-price="18.99">
+                    <img src="assets/images/products/3.webp" alt="" class="cart-menu-item-image">
+                    <div class="cart-menu-item-details">
+                        <div class="cart-menu-item-category">Body</div>
+                        <h4 class="cart-menu-item-name">Cream</h4>
+                        <div class="cart-menu-item-meta">
+                            <span>Price: <span>$18.99</span></span>
+                        </div>
+                        <div class="cart-menu-item-footer">
+                            <div class="cart-menu-item-quantity">
+                                <button class="qty-btn qty-decrease" aria-label="Decrease quantity">−</button>
+                                <span class="qty-value">1</span>
+                                <button class="qty-btn qty-increase" aria-label="Increase quantity">+</button>
+                            </div>
+                            <span class="cart-menu-item-price">$18.99</span>
+                        </div>
+                    </div>
+                    <button class="cart-menu-item-remove" aria-label="Remove item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M4 8H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="cart-menu-item" data-price="22.50">
+                    <img src="assets/images/products/1.webp" alt="" class="cart-menu-item-image">
+                    <div class="cart-menu-item-details">
+                        <div class="cart-menu-item-category">Body</div>
+                        <h4 class="cart-menu-item-name">Oil oil oil</h4>
+                        <div class="cart-menu-item-meta">
+                            <span>Price: <span>$22.50</span></span>
+                        </div>
+                        <div class="cart-menu-item-footer">
+                            <div class="cart-menu-item-quantity">
+                                <button class="qty-btn qty-decrease" aria-label="Decrease quantity">−</button>
+                                <span class="qty-value">1</span>
+                                <button class="qty-btn qty-increase" aria-label="Increase quantity">+</button>
+                            </div>
+                            <span class="cart-menu-item-price">$22.50</span>
+                        </div>
+                    </div>
+                    <button class="cart-menu-item-remove" aria-label="Remove item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M4 8H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Cart Footer -->
+            <div class="cart-menu-footer">
+                <div class="cart-menu-subtotal">
+                    <div>
+                        <div class="cart-menu-subtotal-label">Subtotal <span class="cart-menu-subtotal-count">(4
+                                item)</span>
+                        </div>
+                    </div>
+                    <div class="cart-menu-subtotal-amount">$86.48</div>
+                </div>
+
+                <div class="cart-menu-progress">
+                    <div class="cart-menu-progress-bar">
+                        <div class="cart-menu-progress-fill" style="width: 85%;"></div>
+                    </div>
+                    <p class="cart-menu-progress-text">Add <span class="cart-menu-progress-amount">$15.40</span> to cart
+                        and get
+                        free shipping!</p>
+                </div>
+
+                <div class="cart-menu-buttons">
+                    <button class="cart-menu-button btn btn-primary btn-secondary">clear cart</button>
+                    <a href="checkout.html" class="cart-menu-button btn btn-primary">Check out</a>
+                </div>
+
+                <div class="cart-menu-shipping-info">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="3" width="15" height="13"></rect>
+                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                        <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                        <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                    </svg>
+                    <span>Free shipping on all orders over $150</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Mobile Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- main -->
+    <main class="main-container">
+        <!-- pages hero -->
+        <div class="page-hero">
+            <div class="container">
+                <h1 class="page-title">Our Collection</h1>
+                <p class="page-subtitle">Discover our exquisite range of premium fragrances crafted for the modern
+                    connoisseur</p>
+            </div>
+        </div>
+
+        <section class="shop-display">
+            <div class="container">
+                <div class="shop-layout">
+                    <aside class="shop-sidebar" id="shopSidebar">
+                        <div class="filter-section">
+                            <h3>Category</h3>
+                            <div class="filter-option">
+                                <input type="checkbox" id="cat-face" value="face" class="cat-filter">
+                                <label for="cat-face">Face <span>(24)</span></label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="cat-body" value="body" class="cat-filter">
+                                <label for="cat-body">Body <span>(18)</span></label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="cat-hair" value="hair" class="cat-filter">
+                                <label for="cat-hair">Hair <span>(12)</span></label>
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Brand</h3>
+                            <div class="filter-option">
+                                <input type="checkbox" id="brand-glow" value="glow" class="brand-filter">
+                                <label for="brand-glow">Glow Naturals</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="brand-pure" value="pure" class="brand-filter">
+                                <label for="brand-pure">Pure Essence</label>
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Price Range</h3>
+                            <div class="price-inputs">
+                                <input type="number" id="minPrice" placeholder="Min">
+                                <input type="number" id="maxPrice" placeholder="Max">
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Size (ml)</h3>
+                            <div class="filter-option">
+                                <input type="checkbox" id="size-30" value="30" class="size-filter">
+                                <label for="size-30">30ml</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="size-50" value="50" class="size-filter">
+                                <label for="size-50">50ml</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="size-100" value="100" class="size-filter">
+                                <label for="size-100">100ml</label>
+                            </div>
+                        </div>
+
+                        <button class="clear-filters" id="clearBtn">Clear Filters</button>
+                    </aside>
+
+                    <main class="shop-main">
+                        <div class="shop-toolbar">
+                            <div>Showing <strong id="count">6</strong> products</div>
+                            <div class="shop-actions">
+                                <button class="shop-filter-toggle" id="toggleShopSidebar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5H13V19H5V5ZM19 19H15V5H19V19ZM4 3C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21H20C20.5523 21 21 20.5523 21 20V4C21 3.44772 20.5523 3 20 3H4ZM11 12L7 8.5V15.5L11 12Z"></path></svg>
+                                </button>
+
+                                <select class="sort-select" id="sort">
+                                    <option value="default">Default</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="products-grid" id="grid">
+                            <div class="product-card" data-category="face" data-brand="glow" data-price="42"
+                                data-size="50">
+                                <div class="product-img">
+                                    <img src="assets/images/products/1.webp" alt="">
+                                    <div class="product-badge new">New</div>
+                                </div>
+                                <div class="product-header">
+                                    <div class="product-category">Face</div>
+                                    <div class="product-price">$42</div>
+                                </div>
+                                <h3 class="product-title">Face Oil Serum</h3>
+                                <p class="product-description">Nourishing face oil with natural ingredients.</p>
+                                <div class="product-footer">
+                                    <button class="add-to-cart-btn btn btn-primary" data-product-id="1"
+                                    data-product-name="Face Oil" data-price="24.99"
+                                    data-image="assets/images/products/1.webp" data-category="Face">Add to cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="body" data-brand="pure" data-price="28"
+                                data-size="100">
+                                <div class="product-img">
+                                    <img src="assets/images/products/2.webp" alt="">
+                                </div>
+                                <div class="product-header">
+                                    <div class="product-category">Body</div>
+                                    <div class="product-price">$28</div>
+                                </div>
+                                <h3 class="product-title">Body Butter</h3>
+                                <p class="product-description">Rich moisturizing cream for soft skin.</p>
+                                <div class="product-footer">
+                                    <button class="add-to-cart-btn btn btn-primary" data-product-id="2"
+                                    data-product-name="Body Butter" data-price="24.99"
+                                    data-image="assets/images/products/2.webp" data-category="body">Add to cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="face" data-brand="pure" data-price="55"
+                                data-size="30">
+                                <div class="product-img">
+                                    <img src="assets/images/products/3.webp" alt="">
+                                </div>
+                                <div class="product-header">
+                                    <div class="product-category">Face</div>
+                                    <div class="product-price">$55</div>
+                                </div>
+                                <h3 class="product-title">Vitamin C Serum</h3>
+                                <p class="product-description">Brightening serum for radiant skin.</p>
+                                <div class="product-footer">
+                                    <button class="add-to-cart-btn btn btn-primary" data-product-id="3"
+                                    data-product-name="Vitamin C Serum" data-price="24.99"
+                                    data-image="assets/images/products/3.webp" data-category="skin">Add to cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="hair" data-brand="glow" data-price="35"
+                                data-size="100">
+                                <div class="product-img">
+                                    <img src="assets/images/products/4.webp" alt="">
+                                </div>
+                                <div class="product-header">
+                                    <div class="product-category">Hair</div>
+                                    <div class="product-price">$35</div>
+                                </div>
+                                <h3 class="product-title">Argan Hair Oil</h3>
+                                <p class="product-description">Nourishing oil for smooth hair.</p>
+                                <div class="product-footer">
+                                    <button class="add-to-cart-btn btn btn-primary" data-product-id="4"
+                                    data-product-name="Argan Hair Oil" data-price="24.99"
+                                    data-image="assets/images/products/4.webp" data-category="Hair">Add to cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="body" data-brand="glow" data-price="22"
+                                data-size="100">
+                                <div class="product-img">
+                                    <img src="assets/images/products/1.webp" alt="">
+                                    <div class="product-badge new">New</div>
+                                </div>
+                                <div class="product-header">
+                                    <div class="product-category">Body</div>
+                                    <div class="product-price">$22</div>
+                                </div>
+                                <h3 class="product-title">Body Lotion</h3>
+                                <p class="product-description">Fast-absorbing daily moisture.</p>
+                                <div class="product-footer">
+                                    <button class="add-to-cart-btn btn btn-primary" data-product-id="5"
+                                    data-product-name="Body Lotion" data-price="24.99"
+                                    data-image="assets/images/products/1.webp" data-category="Body">Add to cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="face" data-brand="pure" data-price="48"
+                                data-size="50">
+                                <div class="product-img">
+                                    <img src="assets/images/products/2.webp" alt="">
+                                </div>
+                                <div class="product-header">
+                                    <div class="product-category">Face</div>
+                                    <div class="product-price">$48</div>
+                                </div>
+                                <h3 class="product-title">Night Cream</h3>
+                                <p class="product-description">Intensive overnight repair cream.</p>
+                                <div class="product-footer">
+                                    <button class="add-to-cart-btn btn btn-primary" data-product-id="6"
+                                    data-product-name="Night Cream" data-price="24.99"
+                                    data-image="assets/images/products/2.webp" data-category="Face">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- newsletter -->
+        <div class="newsletter">
+            <div class="container">
+                <h1>Subscribe to get a 10% off coupon for online purchases</h1>
+
+                <form action="">
+                    <input type="email" name="newsletter-email" id="newsletter-email" placeholder="Enter your email">
+                    <button type="submit" class="btn-secondary btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content ">
+                <div class="footer-row">
+                    <div class="footer-col">
+                        <a href="index.html" class="logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 139 31"
+                                data-testid="Presentation-top-area-common" class="frontpage-1vw230l">
+                                <path
+                                    d="M57.98 28.94l-1.595-4.904h-.98L53.81 28.94l-1.593-4.91h-1.23l2.206 6.62h.98l1.716-4.66 1.59 4.66h.98l2.2-6.62h-1.22zM1.334 26.857h33.35v.98H1.334v-.98zm41.318-24.89h2.207v14.59h-2.21V1.967zm10.544 14.59h2.207v-6.13h7.602V8.343h-7.61V3.93h8.46V1.966h-10.66zM8.324 16.8c4.66 0 8.46-3.8 8.46-8.46 0-4.534-3.8-6.62-6.62-6.62-5.518 0-5.886 5.396-5.886 5.396h.13s.98-3.923 4.78-3.923c3.07 0 5.4 2.084 5.4 5.027 0 3.43-2.82 6.25-6.25 6.25-3.31 0-6.372-2.45-6.372-6.87 0-3.44 1.84-6.26 5.027-7.48V0C2.947.61.003 4.17.003 8.33c-.122 4.66 3.68 8.46 8.338 8.46zm36.78 10.056c-1.225-.245-1.593-.49-1.593-.98s.37-.737 1.11-.737c.62 0 1.23.24 1.72.61l.617-.85c-.613-.49-1.47-.86-2.33-.86-1.35 0-2.207.74-2.207 1.96s.73 1.6 2.2 1.96c1.22.25 1.47.49 1.47.98s-.49.86-1.1.86c-.86 0-1.47-.37-2.09-.86l-.74.86c.735.74 1.716 1.11 2.696 1.11 1.35 0 2.33-.73 2.33-1.96 0-1.35-.738-1.84-2.086-2.08zm-9.317-10.3l-4.414-5.884c2.207-.61 3.678-2.2 3.678-4.29 0-2.69-2.2-4.53-5.39-4.53h-6.38v14.59h2.2v-5.4h3.55l4.05 5.4 2.7.126zm-10.3-7.48V3.93h4.047c2.084 0 3.31.86 3.31 2.453s-1.35 2.575-3.31 2.575h-4.047zm40.706 18.76h3.31v-1.102h-3.31V25.14h3.678v-1.103h-4.78v6.498h4.78v-.98H66.2zM91.817 1.844l-6.62 14.713h2.33l1.715-3.8h7.11l1.595 3.8h2.452L93.78 1.844h-1.964zm-1.838 8.95l2.69-6.252 2.69 6.26h-5.4zm18.14-5.026l4.66 6.866.24.368.24-.36 4.536-6.86v10.79h2.207v-14.6h-2.084l-4.904 7.356-4.906-7.356h-2.08v14.59h2.085zm0 21.088h30.89v.98h-30.89v-.98zm22.19-12.383v-4.29h7.6V8.098h-7.6v-4.17h8.58v-1.96h-10.78v14.59h10.79V14.47zM98.93 28.57l-3.557-4.534H94.27v6.498h1.226v-4.536l3.55 4.536h.98v-6.498h-1.1zM72.936 1.968h-2.084v14.59h10.054v-2.084h-7.97zm13.12 25.87h3.31v-1.103h-3.31V25.14h3.677v-1.103H84.95v6.498h4.905v-.98h-3.81zm-9.197-3.8H74.4v6.497h2.453c2.083 0 3.432-1.47 3.432-3.31.122-1.717-1.35-3.188-3.434-3.188zm0 5.516h-1.35V25.14h1.35c1.35 0 2.2.98 2.2 2.206.12 1.226-.86 2.207-2.21 2.207z">
+                                </path>
+                            </svg>
+                        </a>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum aperiam laborum eligendi
+                            sequi</p>
+                    </div>
+
+                    <div class="socials">
+                        <a aria-label="Facebook" title="Facebook" data-testid="Presentation-footer-social-media-icon"
+                            href="http://www.facebook.com/162469850615072"><svg
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit base-MuiOriSocialIcon-icon products-app-emotion-mgbdy8"
+                                focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="FacebookIcon">
+                                <path fill="#1877F2"
+                                    d="M20.227 12.05A8.227 8.227 0 0 0 12 3.823a8.227 8.227 0 0 0-1.285 16.354v-5.749H8.626V12.05h2.089v-1.813c0-2.062 1.228-3.201 3.108-3.201.9 0 1.842.161 1.842.161v2.024h-1.037c-1.022 0-1.341.634-1.341 1.285v1.543h2.282l-.365 2.378h-1.917v5.749a8.23 8.23 0 0 0 6.942-8.127z">
+                                </path>
+                            </svg></a>
+                        <a aria-label="Twitter" title="Twitter" data-testid="Presentation-footer-social-media-icon"
+                            href="https://twitter.com/OriflameNigeria"><svg
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit base-MuiOriSocialIcon-icon products-app-emotion-mgbdy8"
+                                focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="XRingIcon">
+                                <path fill="#000001" d="M12 4a8 8 0 1 1 0 16 8 8 0 0 1 0-16"></path>
+                                <path fill="#fff"
+                                    d="M12.761 11.388 15.74 8h-.706l-2.585 2.941L10.382 8H8l3.123 4.448L8 16h.706l2.73-3.106L13.619 16H16zm-.967 1.099-.316-.443L8.96 8.52h1.084l2.032 2.844.316.443 2.642 3.697H13.95z">
+                                </path>
+                            </svg></a>
+                        <a aria-label="YouTube" title="YouTube" data-testid="Presentation-footer-social-media-icon"
+                            href="https://www.youtube.com/oriflamenigeria"><svg
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit base-MuiOriSocialIcon-icon products-app-emotion-mgbdy8"
+                                focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="YoutubeRingIcon">
+                                <path fill="red" d="m10.84 13.686 2.965-1.687-2.965-1.685z"></path>
+                                <path fill="red"
+                                    d="M12 3.75a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5m5.435 10.999c-.131.49-.513.874-1.003 1.007-.875.237-4.396.24-4.432.24s-3.558-.003-4.432-.239a1.43 1.43 0 0 1-1.003-1.009A15 15 0 0 1 6.328 12c-.005-.921.074-1.841.237-2.748.13-.491.513-.876 1.003-1.009.874-.236 4.396-.239 4.431-.239s3.557.003 4.432.239c.49.134.873.518 1.003 1.01.163.907.242 1.827.237 2.748.005.921-.074 1.841-.237 2.748z">
+                                </path>
+                            </svg></a>
+                        <a aria-label="Instagram" title="Instagram" data-testid="Presentation-footer-social-media-icon"
+                            href="https://www.instagram.com/oriflamenigeria/"><svg
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit base-MuiOriSocialIcon-icon products-app-emotion-mgbdy8"
+                                focusable="false" aria-hidden="true" viewBox="0 0 24 24"
+                                data-testid="InstagramRingIcon">
+                                <path fill="#F00075"
+                                    d="M16.421 8.655c-.103-.265-.226-.454-.424-.652s-.387-.321-.652-.424c-.2-.078-.5-.17-1.053-.195-.598-.027-.777-.033-2.292-.033s-1.694.006-2.292.033c-.553.025-.853.118-1.053.195-.265.103-.454.226-.652.424s-.321.387-.424.652c-.078.2-.17.5-.195 1.053-.027.598-.033.777-.033 2.292s.006 1.694.033 2.292c.025.553.118.853.195 1.053.103.265.226.454.424.652s.387.321.652.424c.2.078.5.17 1.053.195.598.027.777.033 2.292.033s1.694-.006 2.292-.033c.553-.025.853-.118 1.053-.195.265-.103.454-.226.652-.424s.321-.387.424-.652c.078-.2.17-.5.195-1.053.027-.598.033-.777.033-2.292s-.006-1.694-.033-2.292c-.025-.553-.118-.853-.195-1.053M12 14.913a2.913 2.913 0 1 1 0-5.827 2.913 2.913 0 0 1 0 5.827m3.028-5.26a.681.681 0 1 1 0-1.362.681.681 0 0 1 0 1.362">
+                                </path>
+                                <path fill="#F00075" d="M13.891 12a1.89 1.89 0 1 1-3.782 0 1.89 1.89 0 0 1 3.782 0">
+                                </path>
+                                <path fill="#F00075"
+                                    d="M12 3.75a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5m5.638 10.588c-.027.604-.123 1.016-.263 1.377-.145.373-.339.689-.654 1.005s-.632.509-1.005.654c-.361.14-.773.236-1.377.264s-.798.034-2.338.034-1.733-.007-2.338-.034c-.604-.027-1.016-.123-1.377-.264-.373-.145-.689-.339-1.005-.654s-.509-.632-.654-1.005c-.14-.361-.236-.773-.264-1.377S6.329 13.54 6.329 12s.007-1.734.034-2.338.123-1.016.264-1.377c.145-.373.339-.689.654-1.005s.632-.509 1.005-.654c.361-.14.773-.236 1.377-.264s.798-.034 2.338-.034 1.734.007 2.338.034 1.016.123 1.377.264c.373.145.689.339 1.005.654s.509.632.654 1.005c.14.361.236.773.263 1.377s.034.798.034 2.338-.007 1.734-.034 2.338">
+                                </path>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="footer-copyright-text">Copyright © 2025 Oriflame Cosmetics Global SA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/shop.js"></script>
+</body>
+
+</html>

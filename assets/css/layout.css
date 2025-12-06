@@ -44,6 +44,24 @@
 /*  */
 header {
     position: relative;
+    width: 100%;
+}
+
+header.scrolled {
+    z-index: 999;
+    top: 0;
+    position: fixed;
+    box-shadow: var(--shadow);
+    padding: 10px 0;
+    background-color: var(--white);
+}
+
+header.scrolled .mobileNav {
+    height: calc(100vh - 80px)
+}
+
+header.scrolled .mobileNavOverlay {
+    height: calc(100vh - 80px)
 }
 
 header .container {
@@ -893,5 +911,34 @@ footer .container {
 
     .footer-row .logo {
         margin: auto;
+    }
+}
+
+/*  */
+/* Header */
+.page-hero {
+    padding: 80px 0 50px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
+}
+
+.page-title {
+    font-size: 56px;
+    font-weight: 300;
+    color: var(--black);
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.page-subtitle {
+    font-size: 18px;
+    color: var(--muted-color);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .page-hero h1 {
+        font-size: 40px;
     }
 }

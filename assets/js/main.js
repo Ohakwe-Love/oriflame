@@ -298,7 +298,7 @@ document.addEventListener('click', (e) => {
         item.style.transition = 'all 0.3s ease';
         item.style.opacity = '0';
         item.style.transform = 'translateX(100%)';
-        
+
         setTimeout(() => {
             cart.removeItem(productId);
         }, 300);

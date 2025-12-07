@@ -126,6 +126,14 @@
     --primary: #E60028;
     --secondary: #4c9483;
     --faint-secondary: #61bda8cb;
+    --blue: #0051ff;
+    --indigo: #7d00d6;
+    --yellow: #ffd000;
+    --orange: #ff4500;
+    --light-blue: #0051ff41;
+    --light-indigo: #7d00d636;
+    --light-yellow: #ffd00037;
+    --light-orange: #ff44002b;
     --light-bg: #e1f4eb;
     --white: #FFFFFF;
     --black: #000000;
@@ -382,4 +390,120 @@ section {
 .add-to-cart-btn {
     padding: 10px 35px;
     box-shadow: none !important;
+}
+
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group label.important::after {
+    content: "*";
+    color: var(--primary);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid transparent;
+    /* border-radius: 8px; */
+    font-family: var(--font-family);
+    font-size: 15px;
+    color: var(--text-color);
+    background: var(--light-grey);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--black);
+    background: var(--white);
+}
+
+.form-group textarea {
+    resize: none;
+    min-height: 150px;
+}
+
+.form-group.error input,
+.form-group.error textarea,
+.form-group.error select {
+    border-color: var(--primary);
+}
+
+.error-message {
+    display: none;
+    color: var(--primary);
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.form-group.error .error-message {
+    display: block;
+}
+
+.success-message {
+    display: none;
+    background: var(--light-bg);
+    color: var(--secondary);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.success-message.show {
+    display: block;
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+input[type="checkbox"] {
+    accent-color: var(--secondary);
+}
+
+.indigo {
+    background: var(--indigo);
+}
+
+.yellow {
+    background: var(--yellow);
+}
+
+.orange {
+    background: var(--orange);
+}
+
+.blue {
+    background: var(--blue);
 }

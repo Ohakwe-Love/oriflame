@@ -17,8 +17,7 @@
     <!-- custom css -->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/layout.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/shop.css">
+    <link rel="stylesheet" href="assets/css/checkout.css">
 </head>
 
 <body>
@@ -134,17 +133,18 @@
             </form>
 
             <div class="search-catergories">
-                <a href="shop.html">Graphic tees </a>
-                <a href="shop.html">Plain Faces</a>
-                <a href="shop.html">Vintage Faces</a>
-                <a href="shop.html">Band tees</a>
-                <a href="shop.html">Custom Faces</a>
-                <a href="shop.html">Oversized Faces</a>
-                <a href="shop.html">Crew neck Faces</a>
+                <a href="">Graphic tees </a>
+                <a href="">Plain Faces</a>
+                <a href="">Vintage Faces</a>
+                <a href="">Band tees</a>
+                <a href="">Custom Faces</a>
+                <a href="">Oversized Faces</a>
+                <a href="">Crew neck Faces</a>
             </div>
 
             <div class="search-history">
                 <h3>History
+
                     <button id="clearSearchHistory">Clear All</button>
                 </h3>
 
@@ -366,202 +366,234 @@
 
     <!-- main -->
     <main class="main-container">
-        <!-- pages hero -->
-        <div class="page-hero">
+        <section>
             <div class="container">
-                <h1 class="page-title">Our Collection</h1>
-                <p class="page-subtitle">Discover our exquisite range of premium fragrances crafted for the modern
-                    connoisseur</p>
-            </div>
-        </div>
+                <!-- Header -->
+                <div class="checkout-header">
+                    <h1>Checkout</h1>
+                    <p>Complete your purchase in just a few steps</p>
+                </div>
 
-        <section class="shop-display">
-            <div class="container">
-                <div class="shop-layout">
-                    <aside class="shop-sidebar" id="shopSidebar">
-                        <div class="filter-section">
-                            <h3>Category</h3>
-                            <div class="filter-option">
-                                <input type="checkbox" id="cat-face" value="face" class="cat-filter">
-                                <label for="cat-face">Face <span>(24)</span></label>
-                            </div>
-                            <div class="filter-option">
-                                <input type="checkbox" id="cat-body" value="body" class="cat-filter">
-                                <label for="cat-body">Body <span>(18)</span></label>
-                            </div>
-                            <div class="filter-option">
-                                <input type="checkbox" id="cat-hair" value="hair" class="cat-filter">
-                                <label for="cat-hair">Hair <span>(12)</span></label>
-                            </div>
+                <!-- Progress Steps -->
+                <div class="checkout-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <span>Information</span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <span>Shipping</span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <span>Payment</span>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="checkout-wrapper">
+
+                    <!-- Left Column - Forms -->
+                    <div class="checkout-main">
+                        <!-- Contact Information -->
+                        <div class="checkout-section">
+                            <h2 class="section-title">
+                                <span class="section-number">1</span>
+                                Contact Information
+                            </h2>
+                            <form id="contactForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="important">First Name</label>
+                                        <input type="text" name="firstName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="important">Last Name</label>
+                                        <input type="text" name="lastName" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="important">Email Address</label>
+                                    <input type="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="important">Phone Number</label>
+                                    <input type="tel" name="phone" required>
+                                </div>
+                            </form>
                         </div>
 
-                        <div class="filter-section">
-                            <h3>Brand</h3>
-                            <div class="filter-option">
-                                <input type="checkbox" id="brand-glow" value="glow" class="brand-filter">
-                                <label for="brand-glow">Glow Naturals</label>
-                            </div>
-                            <div class="filter-option">
-                                <input type="checkbox" id="brand-pure" value="pure" class="brand-filter">
-                                <label for="brand-pure">Pure Essence</label>
-                            </div>
+                        <!-- Shipping Address -->
+                        <div class="checkout-section">
+                            <h2 class="section-title">
+                                <span class="section-number">2</span>
+                                Shipping Address
+                            </h2>
+                            <form id="shippingForm">
+                                <div class="form-group">
+                                    <label class="important">Street Address</label>
+                                    <input type="text" name="address" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Apartment, suite, etc. (optional)</label>
+                                    <input type="text" name="apartment">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="important">City</label>
+                                        <input type="text" name="city" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="important">State / Province</label>
+                                        <input type="text" name="state" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="important">Postal Code</label>
+                                        <input type="text" name="postalCode" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="important">Country</label>
+                                        <select name="country" required>
+                                            <option value="">Select Country</option>
+                                            <option value="US">United States</option>
+                                            <option value="CA">Canada</option>
+                                            <option value="UK">United Kingdom</option>
+                                            <option value="NG">Nigeria</option>
+                                            <option value="GH">Ghana</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="sameAsBilling">
+                                    <label for="sameAsBilling">Billing address same as shipping</label>
+                                </div>
+                            </form>
                         </div>
 
-                        <div class="filter-section">
-                            <h3>Price Range</h3>
-                            <div class="price-inputs">
-                                <input type="number" id="minPrice" placeholder="Min">
-                                <input type="number" id="maxPrice" placeholder="Max">
+                        <!-- Payment Method -->
+                        <!-- <div class="checkout-section">
+                            <h2 class="section-title">
+                                <span class="section-number">3</span>
+                                Payment Method
+                            </h2>
+                            <div class="payment-methods">
+                                <label class="payment-method selected">
+                                    <input type="radio" name="payment" value="card" checked>
+                                    <div class="payment-icon">💳</div>
+                                    <div class="payment-details">
+                                        <div class="payment-name">Credit / Debit Card</div>
+                                        <div class="payment-description">Pay securely with your card</div>
+                                    </div>
+                                </label>
+
+                                <label class="payment-method">
+                                    <input type="radio" name="payment" value="paypal">
+                                    <div class="payment-icon">🅿️</div>
+                                    <div class="payment-details">
+                                        <div class="payment-name">PayPal</div>
+                                        <div class="payment-description">Fast and secure payment</div>
+                                    </div>
+                                </label>
+
+                                <label class="payment-method">
+                                    <input type="radio" name="payment" value="bank">
+                                    <div class="payment-icon">🏦</div>
+                                    <div class="payment-details">
+                                        <div class="payment-name">Bank Transfer</div>
+                                        <div class="payment-description">Direct bank transfer</div>
+                                    </div>
+                                </label>
+
+                                <label class="payment-method">
+                                    <input type="radio" name="payment" value="cod">
+                                    <div class="payment-icon">💵</div>
+                                    <div class="payment-details">
+                                        <div class="payment-name">Cash on Delivery</div>
+                                        <div class="payment-description">Pay when you receive</div>
+                                    </div>
+                                </label>
                             </div>
+
+                            <div id="cardDetails" style="margin-top: 25px;">
+                                <div class="form-group">
+                                    <label class="important">Card Number</label>
+                                    <input type="text" placeholder="1234 5678 9012 3456" maxlength="19">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="important">Expiry Date</label>
+                                        <input type="text" placeholder="MM/YY" maxlength="5">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="important">CVV</label>
+                                        <input type="text" placeholder="123" maxlength="3">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- Order Notes -->
+                        <!-- <div class="checkout-section">
+                            <h2 class="section-title">Order Notes (Optional)</h2>
+                            <div class="form-group">
+                                <textarea placeholder="Any special instructions for your order..."></textarea>
+                            </div>
+                        </div> -->
+                    </div>
+
+                    <!-- Right Column - Order Summary -->
+                    <div class="checkout-sidebar">
+                        <div class="order-summary">
+                            <h3 class="summary-title">Order Summary</h3>
+
+                            <div id="orderItems" class="summary-items">
+                                <!-- Items will be populated by JavaScript -->
+                            </div>
+
+                            <!-- Coupon Section -->
+                            <div class="coupon-section">
+                                <div class="coupon-form form-group">
+                                    <input type="text" id="couponCode" placeholder="Enter coupon code" class="coupon-input">
+                                    <button class="coupon-btn" onclick="applyCoupon()">Apply</button>
+                                </div>
+                                <div id="couponApplied" style="display: none;" class="coupon-applied">
+                                    <span class="coupon-applied-text"></span>
+                                    <button class="coupon-remove" onclick="removeCoupon()">Remove</button>
+                                </div>
+                            </div>
+
+                            <!-- Totals -->
+                            <div class="summary-totals">
+                                <div class="summary-row">
+                                    <span>Subtotal:</span>
+                                    <span id="summarySubtotal">₦0.00</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Tax (10%):</span>
+                                    <span id="summaryTax">₦0.00</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Shipping:</span>
+                                    <span id="summaryShipping">₦0.00</span>
+                                </div>
+                                <div class="summary-row discount" id="discountRow" style="display: none;">
+                                    <span>Discount:</span>
+                                    <span id="summaryDiscount">-₦0.00</span>
+                                </div>
+                                <div class="summary-row total">
+                                    <span>Total:</span>
+                                    <span id="summaryTotal">₦0.00</span>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary" onclick="placeOrder()" style="margin-top: 25px;">
+                                Place Order
+                            </button>
                         </div>
-
-                        <div class="filter-section">
-                            <h3>Size (ml)</h3>
-                            <div class="filter-option">
-                                <input type="checkbox" id="size-30" value="30" class="size-filter">
-                                <label for="size-30">30ml</label>
-                            </div>
-                            <div class="filter-option">
-                                <input type="checkbox" id="size-50" value="50" class="size-filter">
-                                <label for="size-50">50ml</label>
-                            </div>
-                            <div class="filter-option">
-                                <input type="checkbox" id="size-100" value="100" class="size-filter">
-                                <label for="size-100">100ml</label>
-                            </div>
-                        </div>
-
-                        <button class="clear-filters" id="clearBtn">Clear Filters</button>
-                    </aside>
-
-                    <main class="shop-main">
-                        <div class="shop-toolbar">
-                            <div>Showing <strong id="count">6</strong> products</div>
-                            <div class="shop-actions">
-                                <button class="shop-filter-toggle" id="toggleShopSidebar">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5H13V19H5V5ZM19 19H15V5H19V19ZM4 3C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21H20C20.5523 21 21 20.5523 21 20V4C21 3.44772 20.5523 3 20 3H4ZM11 12L7 8.5V15.5L11 12Z"></path></svg>
-                                </button>
-
-                                <select class="sort-select" id="sort">
-                                    <option value="default">Default</option>
-                                    <option value="price-low">Price: Low to High</option>
-                                    <option value="price-high">Price: High to Low</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="products-grid" id="grid">
-                            <div class="product-card" data-category="face" data-brand="glow" data-price="42"
-                                data-size="50">
-                                <div class="product-img">
-                                    <img src="assets/images/products/1.webp" alt="">
-                                    <div class="product-badge new">New</div>
-                                </div>
-                                <div class="product-header">
-                                    <div class="product-category">Face</div>
-                                    <div class="product-price">$42</div>
-                                </div>
-                                <h3 class="product-title">Face Oil Serum</h3>
-                                <p class="product-description">Nourishing face oil with natural ingredients.</p>
-                                <div class="product-footer">
-                                    <button class="add-to-cart-btn btn btn-primary" data-product-id="1"
-                                    data-product-name="Face Oil" data-price="24.99"
-                                    data-image="assets/images/products/1.webp" data-category="Face">Add to cart</button>
-                                </div>
-                            </div>
-
-                            <div class="product-card" data-category="body" data-brand="pure" data-price="28"
-                                data-size="100">
-                                <div class="product-img">
-                                    <img src="assets/images/products/2.webp" alt="">
-                                </div>
-                                <div class="product-header">
-                                    <div class="product-category">Body</div>
-                                    <div class="product-price">$28</div>
-                                </div>
-                                <h3 class="product-title">Body Butter</h3>
-                                <p class="product-description">Rich moisturizing cream for soft skin.</p>
-                                <div class="product-footer">
-                                    <button class="add-to-cart-btn btn btn-primary" data-product-id="2"
-                                    data-product-name="Body Butter" data-price="24.99"
-                                    data-image="assets/images/products/2.webp" data-category="body">Add to cart</button>
-                                </div>
-                            </div>
-
-                            <div class="product-card" data-category="face" data-brand="pure" data-price="55"
-                                data-size="30">
-                                <div class="product-img">
-                                    <img src="assets/images/products/3.webp" alt="">
-                                </div>
-                                <div class="product-header">
-                                    <div class="product-category">Face</div>
-                                    <div class="product-price">$55</div>
-                                </div>
-                                <h3 class="product-title">Vitamin C Serum</h3>
-                                <p class="product-description">Brightening serum for radiant skin.</p>
-                                <div class="product-footer">
-                                    <button class="add-to-cart-btn btn btn-primary" data-product-id="3"
-                                    data-product-name="Vitamin C Serum" data-price="24.99"
-                                    data-image="assets/images/products/3.webp" data-category="skin">Add to cart</button>
-                                </div>
-                            </div>
-
-                            <div class="product-card" data-category="hair" data-brand="glow" data-price="35"
-                                data-size="100">
-                                <div class="product-img">
-                                    <img src="assets/images/products/4.webp" alt="">
-                                </div>
-                                <div class="product-header">
-                                    <div class="product-category">Hair</div>
-                                    <div class="product-price">$35</div>
-                                </div>
-                                <h3 class="product-title">Argan Hair Oil</h3>
-                                <p class="product-description">Nourishing oil for smooth hair.</p>
-                                <div class="product-footer">
-                                    <button class="add-to-cart-btn btn btn-primary" data-product-id="4"
-                                    data-product-name="Argan Hair Oil" data-price="24.99"
-                                    data-image="assets/images/products/4.webp" data-category="Hair">Add to cart</button>
-                                </div>
-                            </div>
-
-                            <div class="product-card" data-category="body" data-brand="glow" data-price="22"
-                                data-size="100">
-                                <div class="product-img">
-                                    <img src="assets/images/products/1.webp" alt="">
-                                    <div class="product-badge new">New</div>
-                                </div>
-                                <div class="product-header">
-                                    <div class="product-category">Body</div>
-                                    <div class="product-price">$22</div>
-                                </div>
-                                <h3 class="product-title">Body Lotion</h3>
-                                <p class="product-description">Fast-absorbing daily moisture.</p>
-                                <div class="product-footer">
-                                    <button class="add-to-cart-btn btn btn-primary" data-product-id="5"
-                                    data-product-name="Body Lotion" data-price="24.99"
-                                    data-image="assets/images/products/1.webp" data-category="Body">Add to cart</button>
-                                </div>
-                            </div>
-
-                            <div class="product-card" data-category="face" data-brand="pure" data-price="48"
-                                data-size="50">
-                                <div class="product-img">
-                                    <img src="assets/images/products/2.webp" alt="">
-                                </div>
-                                <div class="product-header">
-                                    <div class="product-category">Face</div>
-                                    <div class="product-price">$48</div>
-                                </div>
-                                <h3 class="product-title">Night Cream</h3>
-                                <p class="product-description">Intensive overnight repair cream.</p>
-                                <div class="product-footer">
-                                    <button class="add-to-cart-btn btn btn-primary" data-product-id="6"
-                                    data-product-name="Night Cream" data-price="24.99"
-                                    data-image="assets/images/products/2.webp" data-category="Face">Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </main>
+                    </div>
                 </div>
             </div>
         </section>
@@ -650,8 +682,7 @@
     <script src="assets/js/cart.js"></script>
     <script src="assets/js/layout.js"></script>
     <script type="module" src="assets/js/main.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/shop.js"></script>
+    <script src="assets/js/checkout.js"></script>
 </body>
 
 </html>

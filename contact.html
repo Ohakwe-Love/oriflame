@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/shop.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
 </head>
 
 <body>
@@ -369,199 +369,120 @@
         <!-- pages hero -->
         <div class="page-hero">
             <div class="container">
-                <h1 class="page-title">Our Collection</h1>
-                <p class="page-subtitle">Discover our exquisite range of premium fragrances crafted for the modern
-                    connoisseur</p>
+                <span class="section-label">Get in Touch</span>
+                <h1 class="page-title">Contact us</h1>
+                <p class="page-subtitle">Have a question or want to work together? We'd love to hear from you. Send us a
+                    message and we'll respond as soon as possible.</p>
             </div>
         </div>
 
-        <section class="shop-display">
+        <!-- Contact Section -->
+        <section>
             <div class="container">
-                <div class="shop-layout">
-                    <aside class="shop-sidebar" id="shopSidebar">
-                        <div class="filter-section">
-                            <h3>Category</h3>
-                            <div class="filter-option">
-                                <input type="checkbox" id="cat-face" value="face" class="cat-filter">
-                                <label for="cat-face">Face <span>(24)</span></label>
+                <div class="contact-wrapper">
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <h3>Let's Connect</h3>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
                             </div>
-                            <div class="filter-option">
-                                <input type="checkbox" id="cat-body" value="body" class="cat-filter">
-                                <label for="cat-body">Body <span>(18)</span></label>
-                            </div>
-                            <div class="filter-option">
-                                <input type="checkbox" id="cat-hair" value="hair" class="cat-filter">
-                                <label for="cat-hair">Hair <span>(12)</span></label>
+                            <div class="info-content">
+                                <h4>Phone</h4>
+                                <a href="tel:+2348012345678">+234 801 234 5678</a>
                             </div>
                         </div>
 
-                        <div class="filter-section">
-                            <h3>Brand</h3>
-                            <div class="filter-option">
-                                <input type="checkbox" id="brand-glow" value="glow" class="brand-filter">
-                                <label for="brand-glow">Glow Naturals</label>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
                             </div>
-                            <div class="filter-option">
-                                <input type="checkbox" id="brand-pure" value="pure" class="brand-filter">
-                                <label for="brand-pure">Pure Essence</label>
-                            </div>
-                        </div>
-
-                        <div class="filter-section">
-                            <h3>Price Range</h3>
-                            <div class="price-inputs">
-                                <input type="number" id="minPrice" placeholder="Min">
-                                <input type="number" id="maxPrice" placeholder="Max">
+                            <div class="info-content">
+                                <h4>Email</h4>
+                                <a href="mailto:hello@company.com">hello@company.com</a>
                             </div>
                         </div>
 
-                        <div class="filter-section">
-                            <h3>Size (ml)</h3>
-                            <div class="filter-option">
-                                <input type="checkbox" id="size-30" value="30" class="size-filter">
-                                <label for="size-30">30ml</label>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
                             </div>
-                            <div class="filter-option">
-                                <input type="checkbox" id="size-50" value="50" class="size-filter">
-                                <label for="size-50">50ml</label>
-                            </div>
-                            <div class="filter-option">
-                                <input type="checkbox" id="size-100" value="100" class="size-filter">
-                                <label for="size-100">100ml</label>
-                            </div>
-                        </div>
-
-                        <button class="clear-filters" id="clearBtn">Clear Filters</button>
-                    </aside>
-
-                    <main class="shop-main">
-                        <div class="shop-toolbar">
-                            <div>Showing <strong id="count">6</strong> products</div>
-                            <div class="shop-actions">
-                                <button class="shop-filter-toggle" id="toggleShopSidebar">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5H13V19H5V5ZM19 19H15V5H19V19ZM4 3C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21H20C20.5523 21 21 20.5523 21 20V4C21 3.44772 20.5523 3 20 3H4ZM11 12L7 8.5V15.5L11 12Z"></path></svg>
-                                </button>
-
-                                <select class="sort-select" id="sort">
-                                    <option value="default">Default</option>
-                                    <option value="price-low">Price: Low to High</option>
-                                    <option value="price-high">Price: High to Low</option>
-                                </select>
+                            <div class="info-content">
+                                <h4>Office</h4>
+                                <p>123 Business Avenue<br>Port Harcourt, Rivers State<br>Nigeria</p>
                             </div>
                         </div>
 
-                        <div class="products-grid" id="grid">
-                            <div class="product-card" data-category="face" data-brand="glow" data-price="42"
-                                data-size="50">
-                                <div class="product-img">
-                                    <img src="assets/images/products/1.webp" alt="">
-                                    <div class="product-badge new">New</div>
-                                </div>
-                                <div class="product-header">
-                                    <div class="product-category">Face</div>
-                                    <div class="product-price">$42</div>
-                                </div>
-                                <h3 class="product-title">Face Oil Serum</h3>
-                                <p class="product-description">Nourishing face oil with natural ingredients.</p>
-                                <div class="product-footer">
-                                    <button class="add-to-cart-btn btn btn-primary" data-product-id="1"
-                                    data-product-name="Face Oil" data-price="24.99"
-                                    data-image="assets/images/products/1.webp" data-category="Face">Add to cart</button>
-                                </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
                             </div>
-
-                            <div class="product-card" data-category="body" data-brand="pure" data-price="28"
-                                data-size="100">
-                                <div class="product-img">
-                                    <img src="assets/images/products/2.webp" alt="">
-                                </div>
-                                <div class="product-header">
-                                    <div class="product-category">Body</div>
-                                    <div class="product-price">$28</div>
-                                </div>
-                                <h3 class="product-title">Body Butter</h3>
-                                <p class="product-description">Rich moisturizing cream for soft skin.</p>
-                                <div class="product-footer">
-                                    <button class="add-to-cart-btn btn btn-primary" data-product-id="2"
-                                    data-product-name="Body Butter" data-price="24.99"
-                                    data-image="assets/images/products/2.webp" data-category="body">Add to cart</button>
-                                </div>
-                            </div>
-
-                            <div class="product-card" data-category="face" data-brand="pure" data-price="55"
-                                data-size="30">
-                                <div class="product-img">
-                                    <img src="assets/images/products/3.webp" alt="">
-                                </div>
-                                <div class="product-header">
-                                    <div class="product-category">Face</div>
-                                    <div class="product-price">$55</div>
-                                </div>
-                                <h3 class="product-title">Vitamin C Serum</h3>
-                                <p class="product-description">Brightening serum for radiant skin.</p>
-                                <div class="product-footer">
-                                    <button class="add-to-cart-btn btn btn-primary" data-product-id="3"
-                                    data-product-name="Vitamin C Serum" data-price="24.99"
-                                    data-image="assets/images/products/3.webp" data-category="skin">Add to cart</button>
-                                </div>
-                            </div>
-
-                            <div class="product-card" data-category="hair" data-brand="glow" data-price="35"
-                                data-size="100">
-                                <div class="product-img">
-                                    <img src="assets/images/products/4.webp" alt="">
-                                </div>
-                                <div class="product-header">
-                                    <div class="product-category">Hair</div>
-                                    <div class="product-price">$35</div>
-                                </div>
-                                <h3 class="product-title">Argan Hair Oil</h3>
-                                <p class="product-description">Nourishing oil for smooth hair.</p>
-                                <div class="product-footer">
-                                    <button class="add-to-cart-btn btn btn-primary" data-product-id="4"
-                                    data-product-name="Argan Hair Oil" data-price="24.99"
-                                    data-image="assets/images/products/4.webp" data-category="Hair">Add to cart</button>
-                                </div>
-                            </div>
-
-                            <div class="product-card" data-category="body" data-brand="glow" data-price="22"
-                                data-size="100">
-                                <div class="product-img">
-                                    <img src="assets/images/products/1.webp" alt="">
-                                    <div class="product-badge new">New</div>
-                                </div>
-                                <div class="product-header">
-                                    <div class="product-category">Body</div>
-                                    <div class="product-price">$22</div>
-                                </div>
-                                <h3 class="product-title">Body Lotion</h3>
-                                <p class="product-description">Fast-absorbing daily moisture.</p>
-                                <div class="product-footer">
-                                    <button class="add-to-cart-btn btn btn-primary" data-product-id="5"
-                                    data-product-name="Body Lotion" data-price="24.99"
-                                    data-image="assets/images/products/1.webp" data-category="Body">Add to cart</button>
-                                </div>
-                            </div>
-
-                            <div class="product-card" data-category="face" data-brand="pure" data-price="48"
-                                data-size="50">
-                                <div class="product-img">
-                                    <img src="assets/images/products/2.webp" alt="">
-                                </div>
-                                <div class="product-header">
-                                    <div class="product-category">Face</div>
-                                    <div class="product-price">$48</div>
-                                </div>
-                                <h3 class="product-title">Night Cream</h3>
-                                <p class="product-description">Intensive overnight repair cream.</p>
-                                <div class="product-footer">
-                                    <button class="add-to-cart-btn btn btn-primary" data-product-id="6"
-                                    data-product-name="Night Cream" data-price="24.99"
-                                    data-image="assets/images/products/2.webp" data-category="Face">Add to cart</button>
-                                </div>
+                            <div class="info-content">
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed
+                                </p>
                             </div>
                         </div>
-                    </main>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form-wrapper">
+                        <h3>Send us a Message</h3>
+                        <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
+
+                        <div class="success-message" id="successMessage">
+                            Thank you! Your message has been sent successfully.
+                        </div>
+
+                        <form id="contactForm" action="" method="POST">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="important" for="full_name">Name</label>
+                                    <input type="text" id="full_name" name="full_name" required>
+                                    <span class="error-message">Please enter your first name</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="important" for="email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                    <span class="error-message">Please enter a valid email</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="important" for="subject">Subject</label>
+                                <input type="text" id="subject" name="message">
+                                <span class="error-message">Please select a subject</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="important" for="message">Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                                <span class="error-message">Please enter your message</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -650,8 +571,9 @@
     <script src="assets/js/cart.js"></script>
     <script src="assets/js/layout.js"></script>
     <script type="module" src="assets/js/main.js"></script>
+    <script src="assets/js/formValidator.js"></script>
+    <script src="assets/js/contact.js" type="module"></script>
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/shop.js"></script>
 </body>
 
 </html>

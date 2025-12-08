@@ -134,7 +134,10 @@
     --light-indigo: #7d00d636;
     --light-yellow: #ffd00037;
     --light-orange: #ff44002b;
+    --warning: #fff3e0;
     --light-bg: #e1f4eb;
+    --danger-bg: #ffebee;
+    --danger: #ff0000;
     --white: #FFFFFF;
     --black: #000000;
     --text-color: #333333;

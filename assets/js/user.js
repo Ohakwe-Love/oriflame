@@ -22,10 +22,20 @@ function switchSection(sectionName) {
     document.querySelectorAll('.content-section').forEach(section => {
         section.classList.remove('active');
     });
+
     document.getElementById(sectionName).classList.add('active');
 
     // Load orders if switching to orders section
     if (sectionName === 'orders') {
+        const userNavItems = document.querySelectorAll('.user-nav-item')
+        userNavItems.forEach(item => {
+            const ordersLink = item.getAttribute("data-target");
+            if (ordersLink === sectionName) {
+                item.classList.add("active")
+            }
+        });
+
+        event.target.closest('.user-nav-item').classList.add('active');
         loadOrders();
     }
 
@@ -71,7 +81,7 @@ function loadOrders() {
                                     <td>${order.items} items</td>
                                     <td>${order.total}</td>
                                     <td><span class="status-badge ${order.status}">${order.status.charAt(0).toUpperCase() + order.status.slice(1)}</span></td>
-                                    <td><button class="btn btn-secondary action-btn" onclick="viewOrder('${order.id}')">View</button></td>
+                                    <td><button class="btn btn-secondary user-action-btn" onclick="viewOrder('${order.id}')">View</button></td>
                                 </tr>
                             `).join('')}
                         </tbody>
@@ -116,13 +126,25 @@ function logout() {
 
 // Toggle mobile menu
 function toggleMobileMenu() {
-    const sidebar = document.getElementById('sidebar');
+    const sidebar = document.getElementById('userDashboardSidebar');
     const overlay = document.querySelector('.overlay');
     sidebar.classList.toggle('mobile-open');
-    overlay.classList.toggle('show');
+    overlay.classList.toggle('active');
+    
+    if (sidebar.classList.contains("active")) {
+        document.body.style.overflow = 'hidden'
+    } else {
+        document.body.style.overflow = '';
+    }
 }
 
-document.querySelector(".user-mobile-menu-btn").addEventListener('click', toggleMobileMenu)
+const userMobileBtns = document.querySelectorAll(".user-mobile-menu-btn");
+
+overlay.addEventListener("click", toggleMobileMenu)
+
+userMobileBtns.forEach(btn => {
+    btn.addEventListener('click', toggleMobileMenu)
+})
 
 // Initialize orders on page load
 loadOrders();

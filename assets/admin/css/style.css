@@ -1,0 +1,132 @@
+.stats {
+    width: 100%;
+}
+
+.stats-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    transition: 0.5s ease-in-out;
+}
+
+.stats-card.messages {
+    grid-column: 1 /3;
+    grid-row: 1 / 3;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-direction: column;
+
+    .card-title {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .stats-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .stats-row {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .stats-card.recent-updates {
+        grid-row: 3 / 5 !important;
+        padding: 10px;
+    }
+
+    .stats-card {
+        grid-column: span 2 !important;
+    }
+}
+
+.stats-card.visitors .card-icon {
+    background: var(--myadmin-secondary);
+}
+
+.stats-card.recent-updates .card-icon {
+    background: var(--myadmin-orange);
+}
+
+.card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-icon {
+    background: var(--myadmin-primary);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--myadmin-white);
+}
+
+.stats-card.recent-updates {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+    padding: 10px;
+}
+
+/* recent-update-row */
+.recent-update-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.recent-update-item {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-top: 1px solid var(--myadmin-border-color);
+
+    p {
+        width: 85%;
+    }
+
+    svg {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+.quick-actions {
+    width: 100%;
+}
+
+.quick-actions-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.quick-actions-card {
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--myadmin-body-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    text-transform: capitalize;
+}
+
+.quick-actions-card svg {
+    width: 30px;
+    height: 30px;
+}

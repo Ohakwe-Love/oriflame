@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" width="476" height="45"><foreignObject x="0" y="0" width="476" height="45"><div class="apexcharts-legend" xmlns="http://www.w3.org/1999/xhtml" style="max-height: 22.5px;"></div><style type="text/css">
+      .apexcharts-flip-y {
+        transform: scaleY(-1) translateY(-100%);
+        transform-origin: top;
+        transform-box: fill-box;
+      }
+      .apexcharts-flip-x {
+        transform: scaleX(-1);
+        transform-origin: center;
+        transform-box: fill-box;
+      }
+      .apexcharts-legend {
+        display: flex;
+        overflow: auto;
+        padding: 0 10px;
+      }
+      .apexcharts-legend.apexcharts-legend-group-horizontal {
+        flex-direction: column;
+      }
+      .apexcharts-legend-group {
+        display: flex;
+      }
+      .apexcharts-legend-group-vertical {
+        flex-direction: column-reverse;
+      }
+      .apexcharts-legend.apx-legend-position-bottom, .apexcharts-legend.apx-legend-position-top {
+        flex-wrap: wrap
+      }
+      .apexcharts-legend.apx-legend-position-right, .apexcharts-legend.apx-legend-position-left {
+        flex-direction: column;
+        bottom: 0;
+      }
+      .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-left, .apexcharts-legend.apx-legend-position-top.apexcharts-align-left, .apexcharts-legend.apx-legend-position-right, .apexcharts-legend.apx-legend-position-left {
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+      .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-center, .apexcharts-legend.apx-legend-position-top.apexcharts-align-center {
+        justify-content: center;
+        align-items: center;
+      }
+      .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-right, .apexcharts-legend.apx-legend-position-top.apexcharts-align-right {
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+      .apexcharts-legend-series {
+        cursor: pointer;
+        line-height: normal;
+        display: flex;
+        align-items: center;
+      }
+      .apexcharts-legend-text {
+        position: relative;
+        font-size: 14px;
+      }
+      .apexcharts-legend-text *, .apexcharts-legend-marker * {
+        pointer-events: none;
+      }
+      .apexcharts-legend-marker {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin-right: 1px;
+      }
+
+      .apexcharts-legend-series.apexcharts-no-click {
+        cursor: auto;
+      }
+      .apexcharts-legend .apexcharts-hidden-zero-series, .apexcharts-legend .apexcharts-hidden-null-series {
+        display: none !important;
+      }
+      .apexcharts-inactive-legend {
+        opacity: 0.45;
+      }
+
+    </style></foreignObject><rect width="0" height="0" x="0" y="0" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fefefe"></rect><g class="apexcharts-datalabels-group" transform="translate(0, 0) scale(1)"></g><g class="apexcharts-datalabels-group" transform="translate(0, 0) scale(1)"></g><g class="apexcharts-yaxis" rel="0" transform="translate(-18, 0)"></g><g class="apexcharts-inner apexcharts-graphical" transform="translate(0, 0.5)"><defs><clipPath id="gridRectMasks7g8n3pt"><rect width="476" height="44" x="0" y="0" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="gridRectBarMasks7g8n3pt"><rect width="481" height="49" x="-2.5" y="-2.5" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="gridRectMarkerMasks7g8n3pt"><rect width="476" height="44" x="0" y="0" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="forecastMasks7g8n3pt"></clipPath><clipPath id="nonForecastMasks7g8n3pt"></clipPath><linearGradient x1="0" y1="0" x2="0" y2="1" id="SvgjsLinearGradient1266"><stop stop-opacity="0.5" stop-color="rgba(243,98,112,0.5)" offset="0"></stop><stop stop-opacity="0.1" stop-color="rgba(255,255,255,0.1)" offset="0.9"></stop><stop stop-opacity="0.1" stop-color="rgba(255,255,255,0.1)" offset="1"></stop></linearGradient></defs><line x1="0" y1="0" x2="0" y2="44" stroke="#b6b6b6" stroke-dasharray="3" stroke-linecap="butt" class="apexcharts-xcrosshairs" x="0" y="0" width="1" height="44" fill="#b1b9c4" filter="none" fill-opacity="0.9" stroke-width="1"></line><g class="apexcharts-grid"><g class="apexcharts-gridlines-horizontal" style="display: none;"><line x1="0" y1="0" x2="476" y2="0" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line x1="0" y1="44" x2="476" y2="44" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line></g><g class="apexcharts-gridlines-vertical" style="display: none;"></g><line x1="0" y1="44" x2="476" y2="44" stroke="transparent" stroke-dasharray="0" stroke-linecap="butt"></line><line x1="0" y1="1" x2="0" y2="44" stroke="transparent" stroke-dasharray="0" stroke-linecap="butt"></line></g><g class="apexcharts-grid-borders" style="display: none;"></g><g class="apexcharts-area-series apexcharts-plot-series"><g class="apexcharts-series" zIndex="0" seriesName="Investments" data:longestSeries="true" rel="1" data:realIndex="0"><path d="M 0 29.333333333333332C 23.799999999999997 29.333333333333332 44.2 14.666666666666664 68 14.666666666666664C 91.8 14.666666666666664 112.2 25.666666666666664 136 25.666666666666664C 159.8 25.666666666666664 180.2 7.333333333333329 204 7.333333333333329C 227.8 7.333333333333329 248.2 18.333333333333332 272 18.333333333333332C 295.8 18.333333333333332 316.2 33 340 33C 363.8 33 384.2 11 408 11C 431.8 11 452.2 22 476 22C 476 22 476 22 476 44 L 0 44z" fill="url(#SvgjsLinearGradient1266)" fill-opacity="1" stroke="none" stroke-opacity="1" stroke-linecap="butt" stroke-width="0" stroke-dasharray="0" class="apexcharts-area" index="0" clip-path="url(#gridRectMasks7g8n3pt)" pathTo="M 0 29.333333333333332C 23.799999999999997 29.333333333333332 44.2 14.666666666666664 68 14.666666666666664C 91.8 14.666666666666664 112.2 25.666666666666664 136 25.666666666666664C 159.8 25.666666666666664 180.2 7.333333333333329 204 7.333333333333329C 227.8 7.333333333333329 248.2 18.333333333333332 272 18.333333333333332C 295.8 18.333333333333332 316.2 33 340 33C 363.8 33 384.2 11 408 11C 431.8 11 452.2 22 476 22C 476 22 476 22 476 44 L 0 44z" pathFrom="M 0 44 L 0 44 L 68 44 L 136 44 L 204 44 L 272 44 L 340 44 L 408 44 L 476 44z"></path><path d="M 0 29.333333333333332C 23.799999999999997 29.333333333333332 44.2 14.666666666666664 68 14.666666666666664C 91.8 14.666666666666664 112.2 25.666666666666664 136 25.666666666666664C 159.8 25.666666666666664 180.2 7.333333333333329 204 7.333333333333329C 227.8 7.333333333333329 248.2 18.333333333333332 272 18.333333333333332C 295.8 18.333333333333332 316.2 33 340 33C 363.8 33 384.2 11 408 11C 431.8 11 452.2 22 476 22" fill="none" fill-opacity="1" stroke="#f36270" stroke-opacity="1" stroke-linecap="butt" stroke-width="1" stroke-dasharray="0" class="apexcharts-area" index="0" clip-path="url(#gridRectMasks7g8n3pt)" pathTo="M 0 29.333333333333332C 23.799999999999997 29.333333333333332 44.2 14.666666666666664 68 14.666666666666664C 91.8 14.666666666666664 112.2 25.666666666666664 136 25.666666666666664C 159.8 25.666666666666664 180.2 7.333333333333329 204 7.333333333333329C 227.8 7.333333333333329 248.2 18.333333333333332 272 18.333333333333332C 295.8 18.333333333333332 316.2 33 340 33C 363.8 33 384.2 11 408 11C 431.8 11 452.2 22 476 22" pathFrom="M 0 44 L 0 44 L 68 44 L 136 44 L 204 44 L 272 44 L 340 44 L 408 44 L 476 44" fill-rule="evenodd"></path><g class="apexcharts-series-markers-wrap apexcharts-hidden-element-shown" data:realIndex="0"></g></g><g class="apexcharts-datalabels" data:realIndex="0"></g></g><line x1="0" y1="0" x2="476" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line x1="0" y1="0" x2="476" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line><g class="apexcharts-xaxis" transform="translate(0, 0)"><g class="apexcharts-xaxis-texts-g" transform="translate(0, -4)"></g></g><g class="apexcharts-yaxis-annotations"></g><g class="apexcharts-xaxis-annotations"></g><g class="apexcharts-point-annotations"></g></g></svg>

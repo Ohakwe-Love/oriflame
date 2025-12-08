@@ -1,0 +1,101 @@
+:root[data-topbar-color=brand] {
+    --myadmin-topbar-bg: #348cd4;
+    --myadmin-topbar-item-color: rgba(255, 255, 255, 0.9);
+    --myadmin-topbar-item-hover-color: #ffffff;
+    --myadmin-topbar-search-bg: rgba(255, 255, 255, 0.1);
+    --myadmin-topbar-user-bg: rgba(255, 255, 255, 0.1);
+    --myadmin-topbar-user-border: rgba(255, 255, 255, 0.15);
+}
+
+:root[data-menu-color=dark] {
+    --myadmin-menu-bg: #252630;
+    --myadmin-menu-item-color: #97aac1;
+    --myadmin-menu-item-hover-color: #e2eeff;
+    --myadmin-menu-item-hover-bg: #1e1f27;
+    --myadmin-menu-item-active-color: #e2eeff;
+    --myadmin-menu-item-active-bg: transparent;
+    --myadmin-sidebar-user-bg: #1e1f27;
+}
+
+:root {
+    --fc-border-color: var(--myadmin-border-color);
+    --fc-page-bg-color: var(--myadmin-secondary-bg);
+    --fc-neutral-bg-color: var(--myadmin-light);
+}
+
+:root {
+    --myadmin-breakpoint-xs: 0;
+    --myadmin-breakpoint-sm: 576px;
+    --myadmin-breakpoint-md: 768px;
+    --myadmin-breakpoint-lg: 992px;
+    --myadmin-breakpoint-xl: 1200px;
+    --myadmin-breakpoint-xxl: 1500px;
+}
+
+:root, [data-bs-theme=light] {
+    --myadmin-blue: #348cd4;
+    --myadmin-indigo: #5d6dc3;
+    --myadmin-pink: #e061c9;
+    --myadmin-red: #f36270;
+    --myadmin-orange: #fd7e14;
+    --myadmin-yellow: #f9bc0b;
+    --myadmin-green: #3ec396;
+    --myadmin-teal: #02a8b5;
+    --myadmin-cyan: #4fbde9;
+    --myadmin-black: #000;
+    --myadmin-white: #fff;
+    --myadmin-gray: #8a969c;
+    --myadmin-gray-dark: #343a40;
+    --myadmin-gray-100: #f6f7fb;
+    --myadmin-gray-200: #eef2f7;
+    --myadmin-gray-300: #e7e9eb;
+    --myadmin-gray-400: #ced4da;
+    --myadmin-gray-500: #a1a9b1;
+    --myadmin-gray-600: #8a969c;
+    --myadmin-gray-700: #6c757d;
+    --myadmin-gray-800: #343a40;
+    --myadmin-gray-900: #313a46;
+    --myadmin-primary: #348cd4;
+    --myadmin-secondary: #9368f3;
+    --myadmin-success: #3ec396;
+    --myadmin-info: #4fbde9;
+    --myadmin-warning: #f9bc0b;
+    --myadmin-danger: #f36270;
+    --myadmin-light: #eef2f7;
+    --myadmin-dark: #313a46;
+    --myadmin-primary-rgb: 52, 140, 212;
+    --myadmin-secondary-rgb: 147, 104, 243;
+    --myadmin-success-rgb: 62, 195, 150;
+    --myadmin-info-rgb: 79, 189, 233;
+    --myadmin-warning-rgb: 249, 188, 11;
+    --myadmin-danger-rgb: 243, 98, 112;
+    --myadmin-light-rgb: 238, 242, 247;
+    --myadmin-dark-rgb: 49, 58, 70;
+    --myadmin-primary-text-emphasis: #2c77b4;
+    --myadmin-secondary-text-emphasis: #7d58cf;
+    --myadmin-success-text-emphasis: #35a680;
+    --myadmin-info-text-emphasis: #43a1c6;
+    --myadmin-warning-text-emphasis: #d4a009;
+    --myadmin-danger-text-emphasis: #cf535f;
+    --myadmin-light-text-emphasis: #8a969c;
+    --myadmin-dark-text-emphasis: #343a40;
+    --myadmin-primary-bg-subtle: #e1eef9;
+    --myadmin-secondary-bg-subtle: #efe8fd;
+    --myadmin-success-bg-subtle: #e2f6ef;
+    --myadmin-info-bg-subtle: #e5f5fc;
+}
+
+:root {
+    --myadmin-logo-lg-height: 22px;
+    --myadmin-logo-sm-height: 28px;
+    --myadmin-sidenav-width: 240px;
+    --myadmin-sidenav-width-md: 160px;
+    --myadmin-sidenav-width-sm: 70px;
+    --myadmin-topbar-height: 70px;
+    --myadmin-menu-item-icon-size: 1.125rem;
+    --myadmin-menu-item-font-size: 0.925rem;
+    --myadmin-menu-link-item-gap: 12px;
+    --myadmin-menu-item-padding-x: 15px;
+    --myadmin-menu-item-padding-y: 8px;
+    --myadmin-menu-item-item-gap: 2px;
+}

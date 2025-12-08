@@ -1,0 +1,213 @@
+.messages-container {
+    width: 100% !important;
+}
+
+.messages-container.desktop-view {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 100vh;
+    gap: 10px;
+}
+
+.message-preview,
+.single-message-view {
+    border-radius: var(--myadmin-border-radius);
+    background: var(--myadmin-secondary-bg);
+    box-shadow: var(--myadmin-box-shadow);
+    border: 1px solid var(--myadmin-border-color);
+}
+
+.messages-col-left {
+    padding: 20px;
+}
+
+.search-message {
+    width: 100%;
+    position: relative;
+    height: 40px;
+
+    .search-message-icon {
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+        left: 5px;
+        color: var(--myadmin-white);
+
+        svg {
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+    input {
+        width: 100%;
+        height: 100%;
+        background: var(--);
+        background: var(--myadmin-blue);
+        padding-left: 30px;
+        color: var(--myadmin-white);
+        transition: 0.5s ease-in-out;
+
+        &::placeholder {
+            color: var(--myadmin-white);
+        }
+
+        &:focus {
+            background-color: var(--myadmin-teal);
+        }
+    }
+}
+
+.inbox {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 30px;
+}
+
+.inbox .msg-row {
+    width: 100%;
+}
+
+.single-message-view {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px auto 80px;
+    overflow: hidden;
+}
+
+.message-header {
+    border-bottom: 1px solid var(--myadmin-border-color);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.message-user-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+}
+
+.msg-img {
+    width: 40px !important;
+
+    img {
+        width: 100%;
+    }
+}
+
+.message-wall {
+    overflow-y: scroll;
+    padding: 10px;
+    padding: 20px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    width: 100%;
+
+
+    .msg {
+        max-width: 50%;
+        background: red;
+        padding: 12px 10px;
+        position: relative;
+        border-radius: 5px;
+        color: var(--myadmin-white);
+
+        .time {
+            font-size: 10px !important;
+            position: absolute;
+            bottom: 0px;
+            color: var(--myadmin-gray);
+            right: 5px;
+        }
+    }
+
+    .msg-left {
+        background: var(--myadmin-light-bg-subtle);
+        color: var(--myadmin-body-color);
+    }
+
+    .msg-right {
+        margin-left: auto;
+        background: var(--myadmin-indigo);
+
+        .time {
+            color: var(--myadmin-white);
+        }
+    }
+}
+
+.message-wall::-webkit-scrollbar {
+    display: none;
+}
+
+
+.send-message-actions {
+    border-top: 1px solid var(--myadmin-border-color);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.send-message-actions {
+    form {
+        width: 100%;
+        background: transparent;
+        height: 100%;
+        position: relative;
+
+        input {
+            padding: 0 30px;
+            border: 1px solid var(--myadmin-border-color);
+            height: 100%;
+            width: 100%;
+            border-radius: 50px;
+            color: var(--myadmin-body-color);
+            transition: 0.3s ease-in-out;
+        }
+
+        input::placeholder {
+            color: var(--myadmin-body-color);
+        }
+
+        input:focus {
+            border-color: var(--myadmin-blue);
+        }
+
+        button {
+            background: transparent;
+            border: none;
+            font-size: 25px;
+            position: absolute;
+            top: 45%;
+            transform: translateY(-50%);
+            right: 30px;
+
+            svg {
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .messages-container.desktop-view {
+        grid-template-columns: 1fr;
+    }
+
+    .single-message-view {
+        display: none;
+    }
+}
